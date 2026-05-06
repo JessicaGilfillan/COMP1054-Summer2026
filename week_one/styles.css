@@ -67,13 +67,16 @@ h3 {
 }
 
 .intro-text {
-  font-size: 14px;
-  max-width: none;
+  font-size: 1.15rem;
+  max-width: 100ch;
+  color: #fff;
 }
 
 .main-nav ul {
-  margin: 0;
-  padding-left: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  list-style: none;
 }
 
 .main-nav a {
@@ -82,7 +85,7 @@ h3 {
 }
 
 .main-nav a:hover {
-  color: black;
+  color: #fff;
 }
 
 .hero-image img {
