@@ -26,9 +26,6 @@ body {
 }
 
 .site-header {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
   background-color: #eeeeee;
   padding: 8px;
 }
@@ -86,7 +83,7 @@ section {
   margin: 0;
 }
 
-.event-detials p {
+.event-details p {
   width: 100%;
 }
 
