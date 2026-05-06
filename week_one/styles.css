@@ -25,7 +25,7 @@ body {
   background-color: #fff;
 }
 
-site-header {
+.site-header {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -103,7 +103,7 @@ section {
 }
 
 .featured {
-  background-colour: #ffffcc;
+  background-color: #ffffcc;
 }
 
 .cta-button {
