@@ -14,32 +14,44 @@
   - Improve the interface design.
   - Add comments explaining at least 3 changes you made.
 */
-:root {
+*{
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
   font-family: "Times New Roman", serif;
-  line-height: 1.05;
-  background-color: #fff;
+  line-height: 1.6;
+  color: #1f2937;
+  background-color: #eae6e6;
 }
 
 .site-header {
-  background-color: #eeeeee;
+  background-color: #1c1b2a;
+  color: #fff;
   padding: 8px;
 }
 
+/* Changing paragraph length*/
+p {
+  max-width: 100ch;
+}
 
 .label {
-  color: black;
+  color: #fff;
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-size: 3rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+h1, h2, h3 {
+  margin-top: 0;
 }
 
 h1 {
-  font-size: 26px;
+  font-size: clamp(2.5rem, 7vw, 4.5rem);
   font-weight: normal;
   margin: 0;
 }
