@@ -26,6 +26,8 @@ body {
 }
 
 site-header {
+  display: flex;
+  justify-content: flex-start;
   background-color: #eeeeee;
   padding: 8px;
 }
@@ -65,7 +67,7 @@ h3 {
 }
 
 .main-nav a {
-  color: #999999;
+  color: black;
   text-decoration: none;
 }
 
