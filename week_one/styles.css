@@ -1,116 +1,210 @@
 /*
   COMP1054 - Fix This Interface Activity
-
-  This CSS file has two types of problems:
-
-  1. Broken CSS:
-     Some selectors, properties, or values are written incorrectly.
-
-  2. Interface design problems:
-     Some styles technically work, but they create a poor user experience.
-
-  Your job:
-  - Fix the broken CSS.
-  - Improve the interface design.
-  - Add comments explaining at least 3 changes you made.
+  Repaired + improved, minus the fanciness.
+  Still fixes broken CSS, improves readability, hierarchy, spacing,
+  contrast, CTA visibility, card scannability, and uses Flexbox.
 */
 
+/* ---------- RESET & BASE ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
-  font-family: "Times New Roman", serif;
-  line-height: 1.05;
-  color: #777;
   background-color: #fff;
+  color: #111;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
 }
 
-site-header {
-  background-color: #eeeeee;
-  padding: 8px;
-}
-
-
-.label {
-  color: #cccccc;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 12px;
-}
-
+/* ---------- TYPOGRAPHY (simple hierarchy) ---------- */
 h1 {
-  font-size: 26px;
-  font-weight: normal;
-  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0.5rem 0 1rem;
 }
 
 h2 {
-  font-size: 24px;
-  font-weight: normal;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin: 1rem 0 0.75rem;
+  border-left: 4px solid #2c7da0;
+  padding-left: 0.75rem;
 }
 
 h3 {
-  font-size: 23px;
-  font-weight: normal;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+
+/* ---------- HEADER & NAV ---------- */
+.site-header {
+  background-color: #f0f4f8;
+  padding: 1.5rem;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
+
+.label {
+  color: #2c7da0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.75rem;
+  font-weight: 600;
 }
 
 .intro-text {
-  font-size: 14px;
-  max-width: none;
+  font-size: 1rem;
+  max-width: 60ch;
+  margin: 1rem auto;
+  color: #2c3e50;
 }
 
 .main-nav ul {
-  margin: 0;
-  padding-left: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
 }
 
 .main-nav a {
-  color: #999999;
+  color: #1e466e;
   text-decoration: none;
+  font-weight: 500;
+  padding: 0.25rem 0;
+  border-bottom: 2px solid transparent;
 }
 
-.main-nav a:hovr {
-  color: black;
+.main-nav a:hover {
+  color: #0f2c44;
+  border-bottom-color: #2c7da0;
 }
 
 .hero-image img {
-  width: 900px;
-  height: 200px;
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  display: block;
+  margin: 1rem auto 0;
+  border: 1px solid #ddd;
+}
+
+/* ---------- MAIN LAYOUT ---------- */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem 2rem;
 }
 
 section {
-  padding: 6px;
-  margin: 0;
+  margin: 2rem 0;
 }
 
-.event-detials p {
-  width: 100%;
+/* ---------- EVENT DETAILS ---------- */
+.event-details {
+  background-color: #fefefe;
+  border: 1px solid #e0e0e0;
+  padding: 1.25rem;
+}
+
+.event-details p {
+  max-width: 70ch;
+  margin-bottom: 1rem;
 }
 
 .details-list {
-  padding-left: 45px;
-  font-size: 13px;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.5rem;
+  padding: 0;
+}
+
+.details-list li {
+  background: #f5f7fa;
+  padding: 0.5rem 0.75rem;
+  border-left: 3px solid #2c7da0;
+}
+
+/* ---------- SESSION CARDS (Flexbox for scanning) ---------- */
+.sessions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1.5rem 0;
 }
 
 .session-card {
-  background: #f7f7f7;
-  margin: 4px;
-  padding: 5px;
-  border: none;
+  flex: 1 1 240px;
+  background: #fafafc;
+  border: 1px solid #ddd;
+  padding: 1rem;
 }
 
 .featured {
-  background-colour: #ffffcc;
+  background-color: #fff6e5;
+  border-left: 5px solid #e67e22;
+}
+
+/* ---------- CALL TO ACTION (obvious button) ---------- */
+.register-box {
+  background-color: #eef2f7;
+  border: 1px solid #ccc;
+  padding: 1.5rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.register-box h2 {
+  border-left: none;
+  padding-left: 0;
 }
 
 .cta-button {
-  color: #444;
-  background: #ddd;
-  padding: 4px;
+  display: inline-block;
+  background-color: #2c7da0;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 0.6rem 1.5rem;
+  border: none;
+  margin-top: 0.5rem;
+}
+
+.cta-button:hover {
+  background-color: #1f5e7a;
   text-decoration: underline;
 }
 
+/* ---------- FOOTER ---------- */
 .site-footer {
-  font-size: 12px;
-  color: #aaa;
-  padding: 5px;
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.8rem;
+  color: #555;
+  border-top: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+
+/* ---------- SIMPLE RESPONSIVE ---------- */
+@media (max-width: 700px) {
+  .main-nav ul {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .sessions {
+    flex-direction: column;
+  }
+  
+  main {
+    padding: 0 1rem 1.5rem;
+  }
 }
