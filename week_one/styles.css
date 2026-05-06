@@ -28,6 +28,7 @@ body {
 site-header {
   display: flex;
   justify-content: flex-start;
+  align-items: center;
   background-color: #eeeeee;
   padding: 8px;
 }
