@@ -14,7 +14,9 @@
   - Improve the interface design.
   - Add comments explaining at least 3 changes you made.
 */
-
+:root {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
